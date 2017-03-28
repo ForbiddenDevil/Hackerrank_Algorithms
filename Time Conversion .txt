@@ -1,0 +1,30 @@
+#!/bin/python3
+
+import sys
+
+
+time = input().strip()
+x = time.split(":",2);
+hours = int(x[0])
+minutes = int(x[1])
+seconds = int(x[2][:-2])
+if time[-2]=='A':
+    if hours == 12 :
+        hours = 0
+        print('%02d' % hours,end="")
+        print(":",end="")
+        print('%02d' % minutes,end="")
+        print(":",end="")
+        print('%02d' % seconds,end="")
+    else:
+        print(time[:-2])
+if time[-2]=='P':
+    if hours == 12:
+        hours = hours
+    else:
+        hours = hours + 12;
+    print('%02d' % hours,end="")
+    print(":",end="")
+    print('%02d' % minutes,end="")
+    print(":",end="")
+    print('%02d' % seconds,end="")

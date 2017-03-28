@@ -1,0 +1,15 @@
+string = input()
+array = string.split(" ")
+n = len(array)
+for i in range(n):
+    array[i] = int(array[i])
+arr_inc = sorted(array)
+arr_dec = sorted(array, reverse = True)
+sum1 = 0
+for i in range(n-1):
+    sum1 = sum1 + arr_inc[i]
+sum2 = 0
+for i in range(n-1):
+    sum2 = sum2 + arr_dec[i]
+print(sum1, end = " ")
+print(sum2)
