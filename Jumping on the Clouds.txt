@@ -1,0 +1,25 @@
+#!/bin/python3
+
+import sys
+
+
+n = int(input().strip())
+c = [int(c_temp) for c_temp in input().strip().split(' ')]
+count = 0
+i = 0
+while i<n:
+    if (i < n-3):
+        if(c[i+2] == 0):
+            i += 2
+        else:
+            i += 1
+        count += 1
+    if (i == n-3):
+        if(c[i] == 1):
+            count += 1
+        count += 1
+        break
+    if (i == n-2):
+        count += 1
+        break
+print(count)

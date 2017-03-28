@@ -1,0 +1,13 @@
+#!/bin/python3
+
+import sys
+import string
+
+h = list(map(int, input().strip().split(' ')))
+word = input().strip()
+alpha = list(string.ascii_lowercase)
+x = min(h)
+for i in range(len(word)):
+    if x < h[alpha.index(word[i])]:
+        x = h[alpha.index(word[i])]
+print(len(word)*x)

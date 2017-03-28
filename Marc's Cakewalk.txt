@@ -1,0 +1,14 @@
+#!/bin/python3
+
+import sys
+
+
+n = int(input().strip())
+calories = list(map(int, input().strip().split(' ')))
+# your code goes here
+cal = sorted(calories)
+sum1 = 0
+cal1 = cal.reverse()
+for i in range(len(calories)):
+    sum1 += (2**i * cal[i])
+print(sum1)

@@ -1,0 +1,21 @@
+#!/bin/python3
+
+import sys
+
+
+n = int(input().strip())
+score = list(map(int, input().strip().split(' ')))
+# your code goes here
+max_score = score[0]
+min_score = score[0]
+max_count = 0
+min_count = 0
+for i in range(n):
+    if max_score < score[i]:
+        max_score = score[i]
+        max_count += 1
+    if min_score > score[i]:
+        min_score = score[i]
+        min_count += 1
+print(max_count, end = " ")
+print(min_count)

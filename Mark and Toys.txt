@@ -1,0 +1,11 @@
+n, k = map(int, input().split(" "))
+price = list(map(int, input().split(" ")))
+price1 = sorted(price)
+sum1 = 0
+for i in range(n):
+    if sum1 < k:
+        sum1 += price1[i]
+    else:
+        sum1 -= price1[i]
+        break
+print(i-1)

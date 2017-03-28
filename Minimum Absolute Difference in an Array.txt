@@ -1,0 +1,13 @@
+import sys
+n = int(input().strip())
+a = list(map(int, input().strip().split(' ')))
+small = max(a)
+xp = sorted(a)
+if(len(a) != len(list(set(a)))):
+    print("0")
+else:
+    for i in range(len(a)-1):
+        temp = abs(xp[i] - xp[i+1])
+        if temp < small :
+            small = temp
+    print(small)

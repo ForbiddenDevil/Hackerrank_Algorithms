@@ -1,0 +1,13 @@
+#!/bin/python3
+
+import sys
+
+n,k = input().strip().split(' ')
+n,k = [int(n),int(k)]
+height = list(map(int, input().strip().split(' ')))
+# your code goes here
+x = sorted(height)
+if x[n-1] > k:
+    print(x[n-1]-k)
+else:
+    print("0")

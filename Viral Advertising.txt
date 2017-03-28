@@ -1,0 +1,8 @@
+import math
+n = int(input())
+start = 5
+sum = 0
+for i in range(n):
+    sum += math.floor(start/2)
+    start = math.floor(start/2)*3
+print(sum)

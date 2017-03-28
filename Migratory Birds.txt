@@ -1,0 +1,13 @@
+#!/bin/python3
+
+import sys
+
+n = int(input().strip())
+types = list(map(int, input().strip().split(' ')))
+# your code goes here
+x = [0, 0, 0, 0, 0]
+for i in range(n):
+    for j in range(5):
+        if types[i] == j+1:
+            x[j] += 1
+print(x.index(max(x))+1)

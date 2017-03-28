@@ -1,0 +1,10 @@
+n = int(input())
+arr = list(map(int, input().split(" ")))
+arr1 = list()
+for k in range(100):
+    arr1.append(0)
+for i in range(n):
+    for j in range(100):
+        if arr[i] == j+1:
+            arr1[j] += 1
+print(n - max(arr1))

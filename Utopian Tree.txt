@@ -1,0 +1,18 @@
+#!/bin/python3
+
+import sys
+
+
+t = int(input().strip())
+for a0 in range(t):
+    h = 1
+    flag = True
+    n = int(input().strip())
+    for i in range(n):
+        if(flag):
+            h *= 2
+            flag = False
+        else:
+            h += 1
+            flag = True
+    print(h)

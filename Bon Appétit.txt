@@ -1,0 +1,9 @@
+x, k = map(int,input().strip().split(" "))
+price = list(map(int, input().split(" ")))
+charge = int(input())
+add = sum(price)
+xp = (add - price[k])/2
+if charge == xp:
+    print("Bon Appetit")
+else:
+    print(int(charge-xp))

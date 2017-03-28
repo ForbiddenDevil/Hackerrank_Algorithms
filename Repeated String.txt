@@ -1,0 +1,20 @@
+#!/bin/python3
+
+import sys
+
+
+s = input().strip()
+n = int(input().strip())
+count = 0
+for i in range(len(s)):
+    if s[i] == 'a':
+        count += 1
+x = int(n/len(s))
+count1 = 0
+count1 = x*count
+xp = n%len(s)
+count2 = 0
+for i in range(xp):
+    if s[i] == 'a':
+        count2 += 1
+print(count1 + count2)
