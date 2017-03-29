@@ -1,0 +1,19 @@
+#!/bin/python3
+
+import sys
+
+
+s,n,m = input().strip().split(' ')
+s,n,m = [int(s),int(n),int(m)]
+keyboards = [int(keyboards_temp) for keyboards_temp in input().strip().split(' ')]
+pendrives = [int(pendrives_temp) for pendrives_temp in input().strip().split(' ')]
+maximum = 0
+if s < min(keyboards) + min(pendrives):
+    print("-1")
+else:
+    for i in keyboards:
+        for j in pendrives:
+            if i + j <= s:
+                if i + j > maximum:
+                    maximum = i + j
+    print(maximum)
