@@ -1,0 +1,19 @@
+#!/bin/python3
+
+import sys
+
+
+n,k = input().strip().split(' ')
+n,k = [int(n),int(k)]
+c = [int(c_temp) for c_temp in input().strip().split(' ')]
+E = 100
+flag = True
+i = 0
+while flag:
+    i = (i + k) % n
+    E -= 1
+    if c[i] == 1:
+        E -= 2
+    if i == 0:
+        break
+print(E)
