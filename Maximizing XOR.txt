@@ -1,0 +1,10 @@
+l = int(input())
+m = int(input())
+x = 0
+ans = 0
+for i in range(l, m+1):
+    for j in range(i, m+1):
+        x = i ^ j
+        if ans < x:
+            ans = x
+print(ans)
