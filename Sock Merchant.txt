@@ -1,0 +1,12 @@
+#!/bin/python3
+
+import sys
+
+
+n = int(input().strip())
+#c = [int(c_temp) for c_temp in input().strip().split(' ')]
+c = input().split(" ")
+count = 0
+for i in set(c):
+    count += int(c.count(i) / 2)
+print(count)
