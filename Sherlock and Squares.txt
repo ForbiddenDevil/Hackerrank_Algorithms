@@ -1,0 +1,6 @@
+import math
+n = int(input())
+for i in range(n):
+    a, b = map(int, input().split(" "))
+    ans = math.floor(math.sqrt(b)) - math.ceil(math.sqrt(a)) + 1
+    print(ans)
