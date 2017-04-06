@@ -1,0 +1,7 @@
+import sys
+t = int(input().strip())
+i = 3
+while t > i:
+    t = t - i
+    i *= 2
+print(i-t+1)
