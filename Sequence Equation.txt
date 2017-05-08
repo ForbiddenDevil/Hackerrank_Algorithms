@@ -1,0 +1,5 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
+p = list(map(int, input().split(" ")))
+for x in range(n):
+    print(p.index(p.index(x + 1) + 1) + 1)
