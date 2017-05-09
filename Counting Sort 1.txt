@@ -1,0 +1,6 @@
+n = int(input())
+arr = list(map(int, input().split(" ")))
+lst = 100*[0]
+for i in arr :
+    lst[i] += 1
+print(*lst)
