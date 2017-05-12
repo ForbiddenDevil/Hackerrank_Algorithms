@@ -1,0 +1,12 @@
+import math
+
+n = int(input())
+arr = sorted(list(map(int, input().split(" "))))
+diff = []
+for i in range(n - 1) :
+    diff.append(math.fabs(arr[i] - arr[i+1]))
+least = min(diff)
+for i in range(n - 1) :
+    if math.fabs(arr[i] - arr[i+1]) == least :
+        print(arr[i], end = " ")
+        print(arr[i+1], end = " ")
