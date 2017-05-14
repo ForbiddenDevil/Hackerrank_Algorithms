@@ -1,0 +1,13 @@
+n = int(input())
+arr = []
+for i in range(n) :
+    temp = list(input().split(" "))
+    arr.append(int(temp[0]))
+lst = 100*[0]
+for i in arr :
+    lst[i] += 1
+print(lst[0], end = " ")
+ans = lst[0]
+for i in range(1, 100) :
+    ans += lst[i]
+    print(ans, end = " ")
