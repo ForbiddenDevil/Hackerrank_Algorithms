@@ -1,0 +1,19 @@
+#!/bin/python3
+
+import sys
+
+
+t = int(input().strip())
+for a0 in range(t):
+    n = int(input().strip())
+    count = 0
+    nx = n
+    while n != 0:
+        rem = n % 10
+        if rem == 0:
+            n = n // 10
+        else:
+            if nx % rem == 0:
+                count += 1
+            n = n // 10
+    print(count)
