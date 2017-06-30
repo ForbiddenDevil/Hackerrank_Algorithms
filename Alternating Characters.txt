@@ -1,0 +1,21 @@
+#!/bin/python3
+
+import sys
+
+def alternatingCharacters(s):
+    # Complete this function
+    count = 0
+    i = 1
+    while i < len(s):
+        if s[i] == s[i-1]:
+            s = s[0:i-1] + s[i:len(s)]
+            count += 1
+        else:
+            i += 1
+    return(count)
+
+q = int(input().strip())
+for a0 in range(q):
+    s = input().strip()
+    result = alternatingCharacters(s)
+    print(result)
