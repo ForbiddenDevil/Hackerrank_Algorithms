@@ -1,27 +1,11 @@
 n = int(input())
-x = list(map(int, input().split(" ")))
-last = x[-1]
-for i in range(1, n+1):
-    if i == n:
-        x[-i] = last
-        for j in range(n):
-            if j == n-1:
-                print(x[j], end = "\n")
-            else:
-                print(x[j], end = " ")
-        break
-    if last <= x[-i-1]:
-        x[-i] = x[-i-1]
-    else:
-        x[-i] = last
-        for j in range(n):
-            if j == n-1:
-                print(x[j], end = "\n")
-            else:
-                print(x[j], end = " ")
-        break
-    for j in range(n):
-        if j == n-1:
-            print(x[j], end = "\n")
-        else:
-            print(x[j], end = " ")
+a = [int(x) for x in input().strip().split(' ')]
+i = n-1
+temp = a[i]
+j = i-1
+while j >= 0 and a[j] > temp:
+    a[j+1] = a[j]
+    j = j-1
+    print(*a)
+a[j+1] = temp
+print(*a)
