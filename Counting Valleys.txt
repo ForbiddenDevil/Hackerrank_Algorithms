@@ -1,0 +1,12 @@
+n = int(input())
+string = input()
+valley = 0
+curr = 0
+for i in range(n):
+    if string[i] == 'D':
+        curr -= 1
+        if curr == -1 :
+            valley += 1
+    else:
+        curr += 1
+print(valley)
