@@ -1,0 +1,15 @@
+#!/bin/python3
+
+import sys
+from collections import Counter
+
+def makingAnagrams(s1, s2):
+    # Complete this function
+    counts = Counter(s1)
+    counts.subtract(s2)
+    return(sum(abs(x) for x in counts.values()))
+
+s1 = input().strip()
+s2 = input().strip()
+result = makingAnagrams(s1, s2)
+print(result)
