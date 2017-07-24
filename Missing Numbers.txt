@@ -1,0 +1,14 @@
+from collections import Counter
+
+n = int(input())
+arr_n = list(map(int, input().strip().split(" ")))
+m = int(input())
+arr_m = list(map(int, input().strip().split(" ")))
+counts_n = Counter(arr_n)
+counts_m = Counter(arr_m)
+counts_m.subtract(counts_n)
+keys = list(counts_m.keys())
+values = list(counts_m.values())
+for i in range(len(values)):
+    if values[i] > 0:
+        print(keys[i], end = " ")
