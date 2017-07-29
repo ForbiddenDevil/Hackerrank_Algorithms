@@ -1,0 +1,15 @@
+n = int(input())
+arr = [int(x) for x in input().strip().split(" ")]
+pivot = arr[0]
+left = []
+right = []
+equal = []
+equal.append(pivot)
+for i in range(1, n):
+    if arr[i] == pivot:
+        equal.append(arr[i])
+    elif arr[i] < pivot:
+        left.append(arr[i])
+    else:
+        right.append(arr[i])
+print(*left, *equal, *right)
