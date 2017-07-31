@@ -1,0 +1,14 @@
+#!/bin/python3
+
+import sys
+from collections import Counter
+
+def lonelyinteger(a):
+    # Complete this function
+    count = Counter(a)
+    return([i for i in count if count[i] == 1])
+
+n = int(input().strip())
+a = list(map(int, input().strip().split(' ')))
+result = lonelyinteger(a)
+print(*result)
