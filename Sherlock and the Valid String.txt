@@ -1,0 +1,18 @@
+#!/bin/python3
+
+import sys
+
+def isValid(s):
+    # Complete this function
+    if len(s) % len(set(s)) == 0:
+        return("YES")
+    elif (len(s)-1) % (len(set(s))-1) == 0:
+        return("YES")
+    elif len(s) % len(set(s)) == 1:
+        return("YES")
+    else:
+        return("NO")
+
+s = input().strip()
+result = isValid(s)
+print(result)
