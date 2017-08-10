@@ -1,0 +1,22 @@
+n = int(input())
+num_dict = {}
+maximum = 0
+
+for i in range(n):
+    x = input().strip().split(" ")
+    num = int(x[0])
+    text = x[1]
+    if i < n/2:
+        text = "-" 
+    if num > maximum:
+        maximum = num
+    if num in num_dict:
+        num_dict[num].append(text)
+    else:
+        num_dict[num] = [text]
+output = []
+for i in range(maximum + 1):
+    if i in num_dict:
+        for line in num_dict[i]:
+            output.append(line)
+print(' '.join(output))
