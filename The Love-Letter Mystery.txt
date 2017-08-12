@@ -1,0 +1,26 @@
+#!/bin/python3
+
+import sys
+
+def theLoveLetterMystery(s):
+    # Complete this function
+    count = 0
+    i = 0
+    s = list(s)
+    while i < len(s)//2:
+        if s[i] == s[-(i+1)]:
+            i += 1
+        else:
+            if ord(s[i]) > ord(s[-(i+1)]):
+                s[i] = chr(ord(s[i]) - 1)
+                count += 1
+            else:
+                s[-(i+1)] = chr(ord(s[-(i+1)]) - 1)
+                count += 1
+    return(count)
+
+q = int(input().strip())
+for a0 in range(q):
+    s = input().strip()
+    result = theLoveLetterMystery(s)
+    print(result)
