@@ -1,0 +1,15 @@
+for _ in range(int(input())):
+    n = int(input())
+    arr = list(map(int, input().strip().split(" ")))
+    sum1 = 0; ans = 0; ans1 = 0
+    for i in arr:
+        sum1 = max(sum1 + i, 0)
+        ans = max(ans, sum1)
+    for i in arr:
+        if i > 0:
+            ans1 += i
+    if ans == 0:
+        ans = max(arr)
+    if ans1 == 0:
+        ans1 = max(arr)
+    print(ans, ans1)
