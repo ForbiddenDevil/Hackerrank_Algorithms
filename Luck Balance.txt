@@ -1,0 +1,19 @@
+n, k = map(int, input().strip().split(" "));
+luck = []
+imp = []
+imp_sum = 0
+unimp_sum = 0
+for i in range(n):
+    temp = list(map(int, input().strip().split(" ")))
+    if temp[1] == 1:
+        luck.append(temp[0])
+    else:
+        unimp_sum += temp[0]
+luck_sorted = sorted(luck)
+neg_luck = 0
+for i in range(len(luck_sorted)):
+    if (len(luck_sorted) - i) > k:
+        neg_luck -= luck_sorted[i]
+    else:
+        imp_sum += luck_sorted[i]
+print(imp_sum + unimp_sum + neg_luck)
