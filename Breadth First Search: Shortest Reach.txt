@@ -1,0 +1,32 @@
+#!/bin/python3
+
+import sys
+
+if __name__ == "__main__":
+    q = int(input().strip())
+    for a0 in range(q):
+        n, m = input().strip().split(' ')
+        n, m = [int(n), int(m)]
+        adj = [[0]*n for i in range(n)]
+        for a1 in range(m):
+            u, v = input().strip().split(' ')
+            u, v = [int(u), int(v)]
+            adj[u-1][v-1] = 1
+            adj[v-1][u-1] = 1
+        s = int(input().strip())
+        visited = [0]*n
+        queue = [s-1]
+        distance = [-1]*n
+        visited[s-1] = 1
+        distance[s-1] = 0
+        while len(queue):
+            node = queue.pop(0)
+            for i in range(n):
+                if adj[node][i] == 1 and visited[i] == 0:
+                    queue.append(i)
+                    visited[i] = 1
+                    distance[i] = distance[node] + 6
+        for i in range(n):
+            if distance[i]:
+                print(distance[i], end = " ")
+        print("")
