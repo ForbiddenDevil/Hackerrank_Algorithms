@@ -1,0 +1,20 @@
+#!/bin/python3
+
+import sys        
+
+def solve(year):
+    # Complete this function
+    if year == 1918:
+        return("26.09.1918")
+    elif ((year <= 1917) & (year%4 == 0)):
+        return("12.09.%d"%year)
+    elif year%400 == 0:
+        return("12.09.%d"%year)
+    elif (year%4 ==0) and (year%100 != 0):
+        return("12.09.%d"%year)
+    else:
+        return("13.09.%d"%year)
+
+year = int(input().strip())
+result = solve(year)
+print(result)
