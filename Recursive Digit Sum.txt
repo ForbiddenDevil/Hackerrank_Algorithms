@@ -1,0 +1,14 @@
+#!/bin/python3
+
+import sys
+
+def superDigit(n, k):
+    # Complete this function
+    mod = n*k%9
+    return(mod if mod else 9)
+
+if __name__ == "__main__":
+    n, k = input().strip().split(' ')
+    n, k = [int(n), int(k)]
+    result = superDigit(n, k)
+    print(result)
