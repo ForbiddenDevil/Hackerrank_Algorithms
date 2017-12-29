@@ -1,0 +1,19 @@
+#!/bin/python3
+
+import sys
+
+
+n = int(input().strip())
+grid = []
+grid_i = 0
+for grid_i in range(n):
+   grid_t = str(input().strip())
+   grid.append(grid_t)
+for i in range(1, n-1):
+    for j in range(1, n-1):
+        if max(grid[i-1][j], grid[i][j-1], grid[i+1][j], grid[i][j+1]) < grid[i][j]:
+            x = list(grid[i])
+            x[j] = "X"
+            grid[i] = "".join(x)
+for i in range(n):
+    print(grid[i])
