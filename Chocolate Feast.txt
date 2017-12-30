@@ -1,0 +1,14 @@
+#!/bin/python3
+
+import sys
+
+t = int(input().strip())
+for a0 in range(t):
+    n,c,m = input().strip().split(' ')
+    n,c,m = [int(n),int(c),int(m)]
+    wrappers = n/c
+    chocolates = n/c
+    while(wrappers >= m):
+        chocolates += wrappers//m;
+        wrappers = wrappers//m + (wrappers % m);
+    print(int(chocolates))
