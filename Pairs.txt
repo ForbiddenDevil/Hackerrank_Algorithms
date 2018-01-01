@@ -1,0 +1,24 @@
+#!/usr/bin/py
+def pairs(a,k):
+    # a is the list of numbers and k is the difference value
+    answer = 0
+    a = list(sorted(a))
+    i = 0
+    j = 1
+    while j < len(a):
+        if a[j] - a[i] == k:
+            answer += 1
+            j += 1
+        elif a[j] - a[i] < k:
+            j += 1
+        else:
+            i += 1
+    return answer
+if __name__ == '__main__':
+    a = input().strip()
+    a = list(map(int, a.split(' ')))
+    _a_size=a[0]
+    _k=a[1]
+    b = input().strip()
+    b = list(map(int, b.split(' ')))
+    print(pairs(b,_k))
