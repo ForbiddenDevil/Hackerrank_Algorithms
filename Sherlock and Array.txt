@@ -1,0 +1,28 @@
+#!/bin/python3
+
+import sys
+
+def solve(a):
+    # Complete this function
+    i = 0
+    j = len(a) - 1
+    ans = 0
+    while(i != j):
+        if ans >= 0:
+            ans -= a[j]
+            j -= 1
+        else:
+            ans += a[i]
+            i += 1
+    if ans == 0:
+        return("YES")
+    else:
+        return("NO")
+
+T = int(input().strip())
+for a0 in range(T):
+    n = int(input().strip())
+    a = list(map(int, input().strip().split(' ')))
+    result = solve(a)
+    print(result)
+
