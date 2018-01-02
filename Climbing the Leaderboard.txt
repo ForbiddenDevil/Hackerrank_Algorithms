@@ -1,0 +1,18 @@
+#!/bin/python3
+
+import sys
+from bisect import bisect_right
+
+def climbingLeaderboard(scores, alice):
+    # Complete this function
+    scores = sorted(set(scores))
+    for i in alice:
+        print(len(scores)-bisect_right(scores, i) + 1)
+
+if __name__ == "__main__":
+    n = int(input().strip())
+    scores = list(map(int, input().strip().split(' ')))
+    m = int(input().strip())
+    alice = list(map(int, input().strip().split(' ')))
+    result = climbingLeaderboard(scores, alice)
+
