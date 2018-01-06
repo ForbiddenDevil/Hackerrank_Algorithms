@@ -1,0 +1,17 @@
+#!/bin/python3
+
+import sys
+
+def getMinimumCost(n, k, c):
+    # Complete this function
+    c = list(reversed(sorted(c)))
+    ans = 0
+    for i in range(n): 
+        ans += ((i//k) + 1) * c[i]
+    return(ans)
+
+n, k = input().strip().split(' ')
+n, k = [int(n), int(k)]
+c = list(map(int, input().strip().split(' ')))
+minimumCost = getMinimumCost(n, k, c)
+print(minimumCost)
