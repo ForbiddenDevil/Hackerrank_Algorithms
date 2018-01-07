@@ -1,0 +1,9 @@
+for _ in range(int(input())):
+    m = int(input())
+    n = int(input())
+    arr = list(map(int, input().strip().split(" ")))
+    for i in range(n-1):
+        for j in range(i+1, n):
+            if arr[i] + arr[j] == m:
+                print(i+1, j+1)
+                break
