@@ -1,0 +1,7 @@
+time = []
+length = int(input())
+for _ in range(length):
+    time.append(sum(list(map(int, input().strip().split(" ")))))
+for i in range(length):
+    print(time.index(min(time)) + 1, end = " ")
+    time[time.index(min(time))] = 10**12
