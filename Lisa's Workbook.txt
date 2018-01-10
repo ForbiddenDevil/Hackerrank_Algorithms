@@ -1,0 +1,16 @@
+n, k = map(int, input().strip().split(" "))
+page = 1
+chapter = 1
+problem = 1
+count = 0
+arr = list(map(int, input().strip().split(" ")))
+
+while chapter <= n:
+    if problem <= page and page <= min(problem + k - 1, arr[chapter-1]):
+        count += 1
+    page += 1
+    problem += k
+    if problem > arr[chapter-1]:
+        chapter += 1
+        problem = 1
+print(count)
