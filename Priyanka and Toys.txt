@@ -1,0 +1,23 @@
+#!/bin/python3
+
+import sys
+
+def toys(w):
+    # Complete this function
+    cost = 0
+    w = list(sorted(w))
+    i = 0
+    while i < n:
+        cost += 1
+        temp = w[i] + 4
+        while i < n and w[i] <= temp:
+            i += 1
+    return(cost)
+            
+
+if __name__ == "__main__":
+    n = int(input().strip())
+    w = list(map(int, input().strip().split(' ')))
+    result = toys(w)
+    print(result)
+
