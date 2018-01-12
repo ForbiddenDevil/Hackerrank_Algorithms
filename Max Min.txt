@@ -1,0 +1,10 @@
+n = int(input())
+k = int(input())
+arr = []
+for _ in range(n):
+    arr.append(int(input()))
+arr = list(sorted(arr))
+ans = arr[n-1] - arr[0]
+for i in range(n-k+1):
+    ans = min(ans, arr[i+k-1] - arr[i])
+print(ans)
