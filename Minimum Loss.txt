@@ -1,0 +1,19 @@
+#!/bin/python3
+
+import sys
+
+def minimumLoss(price):
+    # Complete this function
+    arr = sorted(price)
+    min_loss = 10**10
+    for i in range(1, n):
+        if (arr[i] - arr[i-1] < min_loss) and (price.index(arr[i]) < price.index(arr[i-1])):
+            min_loss = arr[i] - arr[i-1]
+    return(min_loss)
+
+if __name__ == "__main__":
+    n = int(input().strip())
+    price = list(map(int, input().strip().split(' ')))
+    result = minimumLoss(price)
+    print(result)
+
