@@ -1,0 +1,20 @@
+#!/bin/python3
+
+import sys
+from collections import Counter
+
+def pickingNumbers(a):
+    # Complete this function
+    ans = max(Counter(a).values())
+    arr = sorted(set(a))
+    for i in range(len(arr)-1):
+        if arr[i+1] - arr[i] <= 1:
+            ans = max(ans, a.count(arr[i+1]) + a.count(arr[i]))
+    return(ans)
+
+if __name__ == "__main__":
+    n = int(input().strip())
+    a = list(map(int, input().strip().split(' ')))
+    result = pickingNumbers(a)
+    print(result)
+
