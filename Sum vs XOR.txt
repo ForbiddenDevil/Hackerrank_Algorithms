@@ -1,0 +1,20 @@
+#!/bin/python3
+#If there is 0 in n, then corresponding digit in x can be 0 or 1 and thus simulates addition is equivalent to xor...
+#If there is 1 in n, then corresponding digit in x can only be zero to avoid carry and maitaining addition is equivalent to xor...
+#Therefore, we just need to calculate number of zeroes in n and take 2**(number of zeroes)...
+import sys
+
+
+def solve(n):
+    # Complete this function
+    count = 0
+    while n:
+        if n % 2 == 0:
+            count += 1
+        n = n // 2
+    return(2**count)
+
+n = int(input().strip())
+result = solve(n)
+print(result)
+
