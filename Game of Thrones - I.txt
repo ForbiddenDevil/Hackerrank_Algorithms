@@ -1,0 +1,33 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+from collections import Counter
+
+# Complete the gameOfThrones function below.
+def gameOfThrones(s):
+    s = Counter(list(s))
+    s_values = s.values()
+    odd_count = 0
+    for i in s_values:
+        if i%2 != 0:
+            odd_count += 1
+    if odd_count > 1:
+        return("NO")
+    else:
+        return("YES")
+    
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    s = input()
+
+    result = gameOfThrones(s)
+
+    fptr.write(result + '\n')
+
+    fptr.close()
+
