@@ -1,0 +1,22 @@
+def main():
+    l = int(input())
+    h = int(input())
+    flag = True
+    for i in range(l, h+1):
+        d = len(str(i))
+        temp = str(i**2)
+        part1 = temp[:-d]
+        part2 = temp[len(temp)-d:]
+        if len(part1) == 0:
+            if int(part2) == i:
+                print(i, end = " ")
+                flag = False
+        elif int(part1) + int(part2) == i:
+            print(i, end = " ")
+            flag = False
+    if flag:
+        print("INVALID RANGE")
+        
+
+if __name__ == "__main__":
+    main()
