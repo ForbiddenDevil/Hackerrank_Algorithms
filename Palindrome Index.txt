@@ -1,0 +1,51 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+from collections import Counter
+
+# Complete the palindromeIndex function below.
+def check_palindrome(a):
+    if a == ''.join(list(reversed(a))):
+        return(1)
+    else:
+        return(0)
+
+def palindromeIndex(s):
+    n = len(s)
+    flag = 0
+    if check_palindrome(s):
+        return(-1)
+    for i in range(n//2 + 1):
+        if s[i] != s[n-i-1]:
+            s_1 = list(s)
+            s_1[i] = ""
+            s_1 = ''.join(s_1)
+            s_2 = list(s)
+            s_2[n-i-1] = ""
+            s_2 = ''.join(s_2)
+            break
+    if check_palindrome(s_1):
+        return(i)
+    elif check_palindrome(s_2):
+        return(n-i-1)
+    else:
+        return(-1)
+    
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    q = int(input())
+
+    for q_itr in range(q):
+        s = input()
+
+        result = palindromeIndex(s)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
+
