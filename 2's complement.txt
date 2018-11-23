@@ -20,7 +20,7 @@ def negative(n):
         ret += temp
     return(ret)
     
-def twosCompliment(a, b):
+def twosComplement(a, b):
     if a < 0 and b < 0:
         return(negative(abs(a)) - negative(abs(b+1)))
     elif a < 0 and b >= 0:
@@ -41,7 +41,7 @@ if __name__ == '__main__':
         a = int(ab[0])
 
         b = int(ab[1])
-        result = twosCompliment(a, b)
+        result = twosComplement(a, b)
 
         fptr.write(str(result) + '\n')
 
