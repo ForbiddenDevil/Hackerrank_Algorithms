@@ -1,0 +1,49 @@
+#!/bin/python3
+
+import os
+import sys
+
+def positive(n):
+    ret = 0
+    for i in range(32):
+        r = 2**(i+1)
+        l = 2**i
+        ret += (n//r)*l + max(0, (n % r) - l)
+    return(ret)
+
+def negative(n):
+    ret = 0
+    for i in range(32):
+        r = 2**(i+1)
+        l = 2**i
+        temp = (n//r)*l + max(0, (n%r) - max(0, ((n%r) - 2**i)))
+        ret += temp
+    return(ret)
+    
+def twosCompliment(a, b):
+    if a < 0 and b < 0:
+        return(negative(abs(a)) - negative(abs(b+1)))
+    elif a < 0 and b >= 0:
+        return(negative(abs(a)) + positive(b+1))
+    elif a == 0:
+        return(positive(b+1))
+    else:
+        return(positive(b+1) - positive(a))
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input())
+
+    for t_itr in range(t):
+        ab = input().split()
+
+        a = int(ab[0])
+
+        b = int(ab[1])
+        result = twosCompliment(a, b)
+
+        fptr.write(str(result) + '\n')
+
+    fptr.close()
+
