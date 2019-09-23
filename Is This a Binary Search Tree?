@@ -1,0 +1,24 @@
+""" Node is defined as
+class node:
+  def __init__(self, data):
+      self.data = data
+      self.left = None
+      self.right = None
+"""
+arr = []
+def inOrder(root):
+    if root:
+        inOrder(root.left)
+        arr.append(root.data)
+        inOrder(root.right)
+
+def check_binary_search_tree_(root):
+    if not root:
+        return(True)
+    inOrder(root)
+    if len(arr) != len(set(arr)):
+        return(False)
+    if arr != sorted(arr):
+        return(False)
+    else:
+        return(True)
